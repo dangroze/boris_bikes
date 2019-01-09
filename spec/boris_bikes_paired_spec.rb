@@ -2,10 +2,10 @@ require "boris_bikes_paired"
 require 'spec_helper'
 
 describe DockingStation do
-	it {is_expected.to respond_to(:release_bike)}
+  it {is_expected.to respond_to(:release_bike)}
   describe "release_bike" do
 		it "returns a bike" do
-			subject.release_bike
+			expect(subject.release_bike) == Bike.new
 		end
 	#it "releases a bike" do
 	#	DockingStation.new.release_bike
