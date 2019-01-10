@@ -1,21 +1,21 @@
 class DockingStation
-  attr_reader :bike
+  attr_reader :bikes
   def initialize
-    @bike = nil
+    @bikes = []
   end
 
   def release_bike
-    if @bike.nil?
+    if @bikes.empty?
       raise "NoBikeError"
     end
-    @bike
+    @bikes.pop
   end
 
   def dock(bike)
-    if @bike
+    if @bikes.count >= 20
       raise "DockFullError"
     end
-    @bike = bike
+    @bikes << bike
   end
 end
 
