@@ -30,6 +30,9 @@ class DockingStation
   private :empty?, :full?
 end
 
+
+wejfqhqweoifheof
+
 class Bike
 
   def working?
