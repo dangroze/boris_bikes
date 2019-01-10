@@ -1,6 +1,3 @@
-class NoBikeError < StandardError
-end
-
 class DockingStation
   attr_reader :bike
   def initialize
@@ -9,12 +6,15 @@ class DockingStation
 
   def release_bike
     if @bike.nil?
-      raise NoBikeError
+      raise "NoBikeError"
     end
     @bike
   end
 
   def dock(bike)
+    if @bike
+      raise "DockFullError"
+    end
     @bike = bike
   end
 end
