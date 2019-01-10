@@ -24,4 +24,7 @@ describe DockingStation do
 		DockingStation::DEFAULT_CAPACITY.times {subject.dock(bike)}
 		expect { subject.dock(bike)}.to raise_error "DockFullError"
 	end
+	it "has a default value of 20" do
+		expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+	end
 end
